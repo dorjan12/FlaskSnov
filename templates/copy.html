@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Met kocke</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: #e8f0fe;
+            padding-top: 80px;
+        }
+
+        h1 {
+            color: #222;
+        }
+
+        #kocka {
+            font-size: 120px;
+            margin: 30px;
+        }
+
+        button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 15px 35px;
+            font-size: 20px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        #rezultat {
+            font-size: 24px;
+            margin-top: 25px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>🎲 Met kocke</h1>
+
+    <div id="kocka">⚀</div>
+
+    <button onclick="vrziKocko()">VRZI KOCKO</button>
+
+    <p id="rezultat">Klikni na gumb!</p>
+
+    <script>
+        function vrziKocko() {
+            let stevilo = Math.floor(Math.random() * 6) + 1;
+
+            let slike = ["⚀", "⚁", "⚂", "⚃", "⚄", "⚅"];
+
+            document.getElementById("kocka").textContent =
+                slike[stevilo - 1];
+
+            document.getElementById("rezultat").textContent =
+                "Vrgel si: " + stevilo;
+        }
+    </script>
+
+</body>
+</html>
